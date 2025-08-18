@@ -5,15 +5,27 @@
   <title>some love for ma bb v 💙</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       background: linear-gradient(135deg, #ffe6f0, #d6f0ff);
       color: #333;
       padding: 40px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
     }
     h1 {
-      font-size: 2.2em;
+      font-size: 2.4em;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease-out;
+    }
+    p {
+      font-size: 1.2em;
       margin-bottom: 20px;
+      animation: fadeIn 2s ease-out;
     }
     button {
       background: #ff5f8f;
@@ -25,21 +37,59 @@
       color: white;
       cursor: pointer;
       transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     button:hover {
       background: #ff3f76;
+      transform: scale(1.05);
     }
     #mensagem, #foto {
       display: none;
-      margin-top: 20px;
-      font-size: 1.2em;
+      margin-top: 25px;
+      font-size: 1.3em;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    #mensagem.show, #foto.show {
+      display: block;
+      opacity: 1;
     }
     img {
       margin-top: 20px;
       max-width: 80%;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transform: rotate(0deg); /* deixa a foto em pé */
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+      transform: rotate(0deg);
+      animation: fadeIn 1.2s ease;
+    }
+
+    /* Corações */
+    .heart {
+      position: fixed;
+      font-size: 24px;
+      color: #ff5f8f;
+      animation: float 4s linear forwards;
+      pointer-events: none;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -66,10 +116,30 @@
       document.getElementById("musica").play();
     }
     function mostrarMensagem() {
-      document.getElementById("mensagem").style.display = "block";
+      const msg = document.getElementById("mensagem");
+      msg.classList.add("show");
+      soltarCoracoes(); // ativa os corações
     }
     function mostrarFoto() {
-      document.getElementById("foto").style.display = "block";
+      const foto = document.getElementById("foto");
+      foto.classList.add("show");
+      soltarCoracoes(); // ativa os corações também
+    }
+
+    // Função para soltar corações
+    function soltarCoracoes() {
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 4000);
+      }
     }
   </script>
 </body>
