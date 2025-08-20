@@ -69,7 +69,7 @@
     .carousel-slide img {
       width: 100%;
       border-radius: 20px;
-      border: 5px solid #ffb6d9; /* borda fofa */
+      border: 5px solid #ffb6d9;
       box-shadow: 0 6px 14px rgba(0,0,0,0.25);
     }
     .active {
@@ -142,6 +142,7 @@
     </div>
   </div>
 
+  <!-- Música -->
   <audio id="musica" src="https://www.dropbox.com/scl/fi/hjs2rn6xjgcycqwojcgke/djavan.mp3.mp3?raw=1" preload="auto"></audio>
 
   <script>
@@ -167,7 +168,7 @@
         heart.classList.add("heart");
         heart.innerHTML = "💞";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = "5s"; // corações duram 5s
+        heart.style.animationDuration = "5s";
         document.body.appendChild(heart);
         setTimeout(() => { heart.remove(); }, 5000);
       }
@@ -181,7 +182,7 @@
         slides[slideIndex].classList.remove("active");
         slideIndex = (slideIndex + 1) % slides.length;
         slides[slideIndex].classList.add("active");
-      }, 3000); // troca a cada 3s
+      }, 3000);
     }
   </script>
 </body>
