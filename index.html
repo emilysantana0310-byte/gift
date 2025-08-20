@@ -68,7 +68,7 @@
     .carousel-slide img {
       width: 100%;
       border-radius: 20px;
-      border: 5px solid #ffb6d9; /* borda fofa */
+      border: 5px solid #ffb6d9;
       box-shadow: 0 6px 14px rgba(0,0,0,0.25);
     }
     .active {
@@ -166,7 +166,7 @@
         heart.classList.add("heart");
         heart.innerHTML = "💞";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (5) + "s"; // corações duram 5s
+        heart.style.animationDuration = "5s"; // corações duram 5s
         document.body.appendChild(heart);
         setTimeout(() => { heart.remove(); }, 5000);
       }
