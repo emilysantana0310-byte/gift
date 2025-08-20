@@ -7,7 +7,8 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      background: linear-gradient(135deg, #ffe6f0, #d6f0ff);
+      background: url('https://drive.google.com/uc?export=view&id=123RL6cySQuq9p5xk9zRwN3erpJHR5yGf') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
       padding: 40px;
       min-height: 100vh;
@@ -140,7 +141,7 @@
     </div>
   </div>
 
-  <audio id="musica" src="https://drive.google.com/uc?export=download&id=1lzQ_qijflzwgSe2XBVZh7pOZiSVir3gI" preload="auto"></audio>
+  <audio id="musica" src="https://www.dropbox.com/scl/fi/hjs2rn6xjgcycqwojcgke/djavan.mp3.mp3?raw=1" preload="auto"></audio>
 
   <script>
     function tocarMusica() {
@@ -165,7 +166,7 @@
         heart.classList.add("heart");
         heart.innerHTML = "💞";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = "5s";
+        heart.style.animationDuration = (5) + "s"; // corações duram 5s
         document.body.appendChild(heart);
         setTimeout(() => { heart.remove(); }, 5000);
       }
@@ -179,7 +180,7 @@
         slides[slideIndex].classList.remove("active");
         slideIndex = (slideIndex + 1) % slides.length;
         slides[slideIndex].classList.add("active");
-      }, 3000); // cada foto aparece por 3s
+      }, 3000); // troca a cada 3s
     }
   </script>
 </body>
