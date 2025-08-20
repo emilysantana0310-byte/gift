@@ -8,7 +8,7 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      background: url('https://www.dropbox.com/scl/fi/s09zx2qq4zhv405nzqzju/Photo-Aug-20-2025-11-39-26-AM.jpg?raw=1') no-repeat center center fixed;
+      background: url('img/background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
       padding: 40px;
@@ -124,26 +124,11 @@
       <div class="carousel-slide">
         <img src="https://lh3.googleusercontent.com/pw/AP1GczMBfWlN9fI6QlqaJZ0YcmpvN8gMNJWIDj88qOHXwVX6LYsbDX3qXNt78O0vK0qF6j7Bo5h7LP-_ciMgzarOJEO2Jhs_Xbmmtoenk8dhN8ATgrfmLUvDgoOjSXKc_bWRZ-AkfVbAIAu0qxe7v7WWKIE6=w886-h591-s-no?authuser=0" alt="Foto 3">
       </div>
-      <div class="carousel-slide">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOQBTZw0Em59muEi9QH_2RU1ovmy94a7lyCoqbjo52Jl-igMthFrzBSKYESWOPIwB937oVWjaAklPmoaqBR72ShrdV4UMwba38zF7wI8pOlLU-DdYBAmemY5BSUH7o_vgqUtqouhxXayH5Dd86gsEj_=w543-h965-s-no?authuser=0" alt="Foto 4">
-      </div>
-      <div class="carousel-slide">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOMOXCRDRzkdHjQJ1rlhFl0WSAQCWclC-IXM0_th1lqkL-7JwISOlQR3rKVwEFw8950QR4YDf-QKswGYNceGBuZbZQVRQORE8Rl5LdDIuVK0LqotVpxkD_JVDlP7BqFVsg8TXN7kO2e9nBc-l08eaSS=w627-h836-s-no?authuser=0" alt="Foto 5">
-      </div>
-      <div class="carousel-slide">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczMWRc_ai42CBGLwpBnNzcVlZCjtGhLp3EIWq1t4xDx6lD_xA2AIhJlr5lpSqrAzUs1o9OVCrSw4it9hEaDCsqr4lnL_sBzaQZhX6Sq-sroZBivjzxM2_EeG3y9aS76-A6xTvpL0Q7oeLg6eOae88R3e=w627-h836-s-no?authuser=0" alt="Foto 6">
-      </div>
-      <div class="carousel-slide">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczNWt8h6xhfPnYolGuQpWHniZi3QXTgUPUxt9DYJUg2X2g84PnilW8haO7oQif34blzbun-QvBOVVU3I6y5S-xHfddziH3encPtB-wPF9dVdv8eXmrpOk8p019pY4XKtxKbJpbFRn8zlb4s6uLaxZGGK=w627-h836-s-no?authuser=0" alt="Foto 7">
-      </div>
-      <div class="carousel-slide">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczNr1O76uCedFwyoZtfcMWa-O0PXSc62cjAsiaDUzywV8eWUxvr85vdfR-_7lZOKJ4t3TGe3ZVRMgI1_S3zukivMW7xzehDg7-szo3R8bGsvcJbBXely_KTzChHtqG8k91Fz9Nycyr-nPnrF5RG4lQQ_=w543-h965-s-no?authuser=0" alt="Foto 8">
-      </div>
     </div>
   </div>
 
   <!-- Música -->
-  <audio id="musica" src="https://www.dropbox.com/scl/fi/hjs2rn6xjgcycqwojcgke/djavan.mp3.mp3?raw=1" preload="auto"></audio>
+  <audio id="musica" src="audio/djavan.mp3" preload="auto"></audio>
 
   <script>
     function tocarMusica() {
@@ -161,7 +146,6 @@
       iniciarCarrossel();
     }
 
-    // Função para soltar corações
     function soltarCoracoes() {
       for (let i = 0; i < 15; i++) {
         const heart = document.createElement("div");
@@ -174,7 +158,6 @@
       }
     }
 
-    // Carrossel automático
     let slideIndex = 0;
     function iniciarCarrossel() {
       const slides = document.querySelectorAll(".carousel-slide");
